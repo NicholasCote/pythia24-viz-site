@@ -11,4 +11,4 @@ webapp:
   container: 
     port: 5006
     memory: 4
-    image: hub.k8s.ucar.edu/ncote/pythia24-viz:2024-06-14.17
+    image: hub.k8s.ucar.edu/ncote/pythia24-viz:2024-06-14.18
