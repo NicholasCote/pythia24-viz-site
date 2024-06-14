@@ -9,7 +9,6 @@ webapp:
     fqdn: pythia24-viz.k8s.ucar.edu
     secretName: incommon-account-key-pythia24-viz
   container: 
-    image: hub.k8s.ucar.edu/ncote/pythia24-viz
     port: 5006
     memory: 4
     image: hub.k8s.ucar.edu/ncote/pythia24-viz:2024-06-14.17

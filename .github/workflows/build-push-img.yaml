@@ -35,7 +35,7 @@ jobs:
           podman push hub.k8s.ucar.edu/ncote/pythia24-viz:${{ steps.date.outputs.date }}
       - name: Update Helm values.yaml
         run: | 
-          sed -i '15d' app-helm-chart/values.yaml
+          sed -i '14d' app-helm-chart/values.yaml
           echo "    image: hub.k8s.ucar.edu/ncote/pythia24-viz:${{ steps.date.outputs.date }}" >> app-helm-chart/values.yaml
       - name: Update Helm Chart.yaml
         run: | 
