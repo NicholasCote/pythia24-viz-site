@@ -3,7 +3,7 @@ FROM docker.io/mambaorg/micromamba:latest
 
 USER root
 
-RUN apt-get update && apt-get install -y git
+RUN apt-get update && apt-get install -y git-all
 
 # Set the working directory in the container to /app
 WORKDIR /home/mambauser/app
