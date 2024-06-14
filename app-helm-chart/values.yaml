@@ -3,6 +3,7 @@ replicaCount: 1
 webapp:
   name: pythia24-viz
   group: pythia24-viz
+  condaEnv: lens2
   path: /app
   tls:
     fqdn: pythia24-viz.k8s.ucar.edu
