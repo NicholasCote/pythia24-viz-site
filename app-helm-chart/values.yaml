@@ -2,12 +2,12 @@ webapp:
   name: pythia24-viz
   group: pythia24-viz
   condaEnv: ERA5_interactive
-  path: /04_dashboard
+  path: /
   tls:
     fqdn: pythia24-viz.k8s.ucar.edu
     secretName: incommon-account-key-pythia24-viz
   container: 
     port: 5006
-    memory: 4
+    memory: 4G
     cpu: 1
     image: hub.k8s.ucar.edu/ncote/pythia24-viz:2024-06-14.18
