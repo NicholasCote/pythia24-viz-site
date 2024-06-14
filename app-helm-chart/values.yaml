@@ -1,9 +1,7 @@
-replicaCount: 1
-
 webapp:
   name: pythia24-viz
   group: pythia24-viz
-  condaEnv: lens2
+  condaEnv: ERA5_interactive
   path: /04_dashboard
   tls:
     fqdn: pythia24-viz.k8s.ucar.edu
@@ -11,4 +9,5 @@ webapp:
   container: 
     port: 5006
     memory: 4
+    cpu: 1
     image: hub.k8s.ucar.edu/ncote/pythia24-viz:2024-06-14.18
