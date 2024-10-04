@@ -10,4 +10,4 @@ webapp:
     port: 5006
     memory: 4G
     cpu: 1
-    image: hub.k8s.ucar.edu/ncote/pythia24-viz:2024-06-14.18
+    image: hub.k8s.ucar.edu/ncote/pythia24-viz:2024-10-04.22
