@@ -1,6 +1,6 @@
 import fileinput
 
-with open(r'app-helm-chart/Chart.yaml', 'r') as chart:
+with open(r'pythia24-viz-helm-chart/Chart.yaml', 'r') as chart:
     data = chart.readlines()
     num = -1
     for line in data:
@@ -14,5 +14,5 @@ with open(r'app-helm-chart/Chart.yaml', 'r') as chart:
             new_ver = new_ver + '\n'
             data[num] = line.replace(version, new_ver)
 
-with open('app-helm-chart/Chart.yaml', 'w') as chart:
+with open('pythia24-viz-helm-chart/Chart.yaml', 'w') as chart:
     chart.write(''.join(data))
