@@ -9,7 +9,10 @@ on:
   push:
     branches:
       - main
-
+permissions:
+  contents: write
+  pull-requests: write
+  
 # Define the actions that are going to take place as part of this workflow    
 jobs:
   # Name the job(s)
@@ -35,14 +38,14 @@ jobs:
           podman push hub.k8s.ucar.edu/ncote/pythia24-viz:${{ steps.date.outputs.date }}
       - name: Update Helm values.yaml
         run: | 
-          sed -i '13d' app-helm-chart/values.yaml
-          echo "    image: hub.k8s.ucar.edu/ncote/pythia24-viz:${{ steps.date.outputs.date }}" >> app-helm-chart/values.yaml
+          sed -i '13d' pythia24-viz-helm-chart/values.yaml
+          echo "    image: hub.k8s.ucar.edu/ncote/pythia24-viz:${{ steps.date.outputs.date }}" >> pythia24-viz-helm-chart/values.yaml
       - name: Update Helm Chart.yaml
         run: | 
-          sed -i '24d' app-helm-chart/Chart.yaml
-          echo "appVersion: '${{ steps.date.outputs.date }}'" >> app-helm-chart/Chart.yaml
+          sed -i '24d' pythia24-viz-helm-chart/Chart.yaml
+          echo "appVersion: '${{ steps.date.outputs.date }}'" >> pythia24-viz-helm-chart/Chart.yaml
       - name: Run python script to update version by 1
-        run: python app-helm-chart/update_ver.py
+        run: python pythia24-viz-helm-chart/update_ver.py
       - name: Commit changes to main branch
         run: |
           git config --global user.email "$GITHUB_ACTOR@users.noreply.github.com"
