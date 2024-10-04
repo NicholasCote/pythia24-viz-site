@@ -30,7 +30,7 @@ jobs:
           podman build -f Containerfile -t hub.k8s.ucar.edu/ncote/pythia24-viz:${{ steps.date.outputs.date }} . --no-cache --format=docker
       - name: Login to Harbor
         run: podman login hub.k8s.ucar.edu -u robot-ncote+pythia24-viz-site -p ${{ secrets.HARBOR_LOGIN  }}
-      - name: Push Podman image to Docker hub
+      - name: Push Podman image to Harbor
         run: |
           podman push hub.k8s.ucar.edu/ncote/pythia24-viz:${{ steps.date.outputs.date }}
       - name: Update Helm values.yaml
